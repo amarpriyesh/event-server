@@ -1,0 +1,28 @@
+{
+  "type": "module",
+  "name": "event-app",
+  "version": "1.0.0",
+  "description": "event-server",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodemon index.js",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amarpriyesh/event-server.git"
+  },
+  "author": "priyesh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/amarpriyesh/event-server/issues"
+  },
+  "homepage": "https://github.com/amarpriyesh/event-server#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "nodemailer": "^6.9.3",
+    "nodemon": "^2.0.22"
+  }
+}
