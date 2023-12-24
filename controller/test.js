@@ -13,23 +13,45 @@ const TestController = (app) => {
             }
           });
         
-          async function main() {
+          async function main(data) {
+           
             // send mail with defined transport object
             const info = await transporter.sendMail({
-              from: '"Events App"', // sender address
-              to: "priyesh.p@northeastern.edu", // list of receivers
-              subject: "Hello ✔", // Subject line
-              text: "Hello world?", // plain text body
-              html: "<b>Hello world?</b>", // html body
+              from: data.from, // sender address
+              to: "priyesh00500@gmail.com", // list of receivers
+              subject: "From PriyeshPortfolio", // Subject line
+              text: data.text, // plain text body
+              // html body
             });
+
+            
           
             console.log("Message sent: %s", info.messageId);
          
           }
+
+
+          try { 
+            await main(req.body)
+            res.sendStatus(200);
+          }
+          catch (error) {
+
+            res.status(500).send({data: error.message || 'An unexpected error occurred'});
+
+
+          }
+
           
-          main().catch(console.error);
+         
+
+          
+
+
+          
         
-        res.send("Index Page");
+        
+        
     };
       
     
