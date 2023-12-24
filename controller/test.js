@@ -15,12 +15,13 @@ const TestController = (app) => {
         
           async function main(data) {
            
+           
             // send mail with defined transport object
             const info = await transporter.sendMail({
               from: data.from, // sender address
               to: "priyesh00500@gmail.com", // list of receivers
               subject: "From PriyeshPortfolio", // Subject line
-              text: data.text, // plain text body
+              text: `From: ${data.name} \n\n${data.text}`, // plain text body
               // html body
             });
 
@@ -57,6 +58,6 @@ const TestController = (app) => {
     
 
 
-    app.get("/api/index", index);
+    app.post("/api/index", index);
 }
 export default  TestController
